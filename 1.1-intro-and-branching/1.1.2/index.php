@@ -12,21 +12,22 @@ $hours = date("H");
 
 
 if ($hours >= 6 && $hours < 11) {
+	$image = 'img/img/1.jpg';
     $greeting = 'Доброе утро!';
-    $image = "https://pixabay.com/get/57e5d5444e5ba414f6d1867dda6d49214b6ac3e45657774f732b7ddd95/dew-1507498_1920.jpg";
+    
 
 } elseif ($hours >= 11 && $hours < 18) {
+	$image = 'img/img/2.jpg';
     $greeting =  'Добрый день!';   
-    $image = "https://pixabay.com/get/52e0d3454d5aa914f6d1867dda6d49214b6ac3e45657774f732a79d295/polyommatus-icarus-4066785_1920.jpg";
+    
 
-} elseif ($hours >= 18 && $hours < 23) {
-    $greeting = 'Добрый вечер!';  
-    $image = "https://pixabay.com/get/54e1dc4a4d50b108f5d08460825668204022dfe05557774f702a79d4/autumn-219972_1280.jpg"; 
+} elseif ($hours >= 18 && $hours < 23) {   
+    $image = 'img/img/3.jpg'; 
+    $greeting = 'Добрый вечер!';
 
 } else {
+    $image = 'img/img/4.jpg';
     $greeting = 'Доброй ночи!';
-    $image = "https://pixabay.com/
-    get/57e3d2404b55ad14f6d1867dda6d49214b6ac3e45657774f732a7edc96/sunset-1373171_1920.jpg";
    
 }
 
