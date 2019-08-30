@@ -10,11 +10,11 @@ $code = $_POST['code'];
 $codeWord = 'netology';
 
 
-if(!preg_match('/\w+/', $login)){
+if(preg_match('/\W/', $login)){
 	echo 'Поле имени содержит недопустимые символы @/*?,;:.<br>';
 }elseif (strlen($password) < 8) {
 	echo 'Пароль должен быть не менее 8 символов <br>';
-}elseif (!preg_match('/[0-9a-z]+@[a-z]/', $email)){
+}elseif (!preg_match('/[0-9a-z]+@[a-z]+.[a-z]/', $email)){
 	echo 'Введите почтовый адрес в формате somemail@email.com <br>';
 }elseif (strlen($firstName) < 1||strlen($lastName) <1 ||strlen($firstName) <1 ){
 	echo 'Длина каждого из полей должна быть больше 1-го символа <br>';
