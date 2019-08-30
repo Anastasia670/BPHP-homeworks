@@ -10,7 +10,7 @@ $code = $_POST['code'];
 $codeWord = 'netology';
 
 
-if(preg_match('/\W/', $login)){
+if(!preg_match("/^[0-9a-zA-Z\._\- ]+$/", $login)){
 	echo 'Поле имени содержит недопустимые символы @/*?,;:.<br>';
 }elseif (strlen($password) < 8) {
 	echo 'Пароль должен быть не менее 8 символов <br>';
