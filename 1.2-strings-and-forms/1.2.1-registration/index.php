@@ -16,7 +16,7 @@ if(!preg_match('/[^@\/\*?,;:]/', $login)){
 	echo 'Пароль должен быть не менее 8 символов <br>';
 }elseif (!preg_match('/[0-9a-z]+@[a-z]+.[a-z]/', $email)){
 	echo 'Введите почтовый адрес в формате somemail@email.com <br>';
-}elseif (strlen($firstName) < 1||strlen($lastName) < 1 || strlen($firstName) < 1 ){
+}elseif (strlen($firstName) === 0||strlen($lastName) === 0 || strlen($firstName) === 0 ){
 	echo 'Длина каждого из полей должна быть больше 1-го символа <br>';
 }elseif ($codeWord !=trim(strtolower($code))) {
 	echo 'Кодовое слово указано неверно <br>';
