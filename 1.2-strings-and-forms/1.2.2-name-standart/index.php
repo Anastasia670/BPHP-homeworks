@@ -1,5 +1,7 @@
 <?php
 
+mb_internal_encoding("UTF-8");
+
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $middleName = $_POST['middleName'];
