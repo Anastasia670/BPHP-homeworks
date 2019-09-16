@@ -1,9 +1,11 @@
+<pre>
+
 <?php
 
 function generate($rows, $placesPerRow, $avaliableCount) {
 	$map = [];
 
-    if ($avaliableCount > ($rows * $placesPerRow)) {
+    if ($avaliableCount < ($rows * $placesPerRow)) {
         return false;
     }
     
@@ -43,59 +45,59 @@ $requiredPlace = 5;
 
 $reverve = reserve($map, $requiredRow, $requiredPlace);
 
-logReserve($requiredRow, $requiredPlace, $reverve);
+// logReserve($requiredRow, $requiredPlace, $reverve);
 
 
 
-function logReserve($row, $place, $result){
-    if ($result) {
-        echo "Ваше место забронировано! Ряд $row, место $place".PHP_EOL;
-    } else {
-        echo "Что-то пошло не так=( Бронь не удалась".PHP_EOL;
+// function logReserve($row, $place, $result){
+//     if ($result) {
+//         echo "Ваше место забронировано! Ряд $row, место $place".PHP_EOL;
+//     } else {
+//         echo "Что-то пошло не так=( Бронь не удалась".PHP_EOL;
 
-    };
+//     };
 
-};
+// };
+
+
 
 function groupReserve($map, $seats) {
+
         $counter = 0;
         $reserve = [];            
 
-
     for($i=0; $i<count($map); $i++){
+    $row = $i + 1;
 
         for($j=0; $j<(count($map[$i])-$seats + 1); $j++) {
-
+         $place = $j +1;
+ 
             if($counter !== $seats) {
 
                 if($map[$i][$j] === FALSE) {
-
-                    $counter++;
-
-                    $reserve[] =  [$i, $j]; 
+                    $counter++;                 
+                    $reserve[] =  "ряд:  $row, место: $place"; 
 
                 } else {
-
                    $counter = 0;
-
                 }
 
+
             }else {
-
+                echo "$seats места забронированы:".PHP_EOL;
+                if (isset($reserve)) {
+             foreach ($reserve as $key => $value) {
+               	echo $value.PHP_EOL;
+                }
+               }
                 return $reserve;
-
             }
-
-        }     
-
+       }     
     }
-
 }
-
-
-print_r(groupReserve($map, 3));
-var_dump(groupReserve($map, 3));
+groupReserve($map, 3);
 
 
 
 ?>
+</pre>
