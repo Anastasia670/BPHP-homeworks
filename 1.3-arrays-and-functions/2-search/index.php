@@ -27,20 +27,20 @@ function groupReserve($map, $seats) {
     for($i=0; $i<count($map); $i++){
     $counter = 0;    
     $row = $i + 1;
-    //$reserve = ["Ряд $row"];
+    $reserve = ["Ряд $row"];
 
     //$search = (count($map[$i])-$seats)+ 1;
 
         for($j=0; $j<(count($map[$i])-$seats + 1); $j++) {
          $place = $j +1;
-         //$reserve[] =  "Место $place";
+         $reserve[] =  "Место $place";
 
 
             if($counter !== $seats) {
 
                 if($map[$i][$j] === FALSE) {
                     $counter++;
-                    $reserve[] = "ряд:  $row, место: $place"; 
+                    //$reserve[] = "ряд:  $row, место: $place"; 
 
                 } else {
                   
